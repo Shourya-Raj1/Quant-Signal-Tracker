@@ -1,4 +1,4 @@
-# 📊 IndiQuant Signal Tracker
+# 📊 collective intelligence signal platform
 
 A frontend prototype for a **collective intelligence signal platform** built for Indian stock markets.
 
@@ -8,7 +8,6 @@ Inspired by [IndiQuant's](https://indiquantresearch.in) vision of aggregating di
 
 ## 💡 What is this?
 
-After researching IndiQuant's platform concept, I identified a key missing piece:
 **a way for researchers to anonymously submit and track trading signals.**
 
 This prototype demonstrates what that interface could look like.
@@ -47,17 +46,6 @@ This is a frontend-only prototype. A real version would need:
 
 ---
 
-## 🚀 How to Run
-
-Just open `index.html` in any browser. No installation needed.
-
-```bash
-# Option 1 - Direct open
-open index.html
-
-# Option 2 - VS Code Live Server
-# Right click index.html → Open with Live Server
-```
 
 ---
 
@@ -77,9 +65,9 @@ indiquant-signal-tracker/
 
 ## 👨‍💻 Author
 
-Built by [Your Name] · CSE (AIML) · 3rd Semester  
-Research + vibe coding · Built to understand IndiQuant's vision
+Built by [Shourya Raj] · CSE (AIML) ·  
+Research + vibe coding · Built to understand Quant's vision
 
 ---
 
-> *"Collective intelligence, not isolated genius."* — IndiQuant
+
