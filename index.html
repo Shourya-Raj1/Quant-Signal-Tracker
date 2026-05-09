@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IndiQuant Signal Tracker</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">IQ<span>Signal</span></div>
+    <div class="tagline">Collective Intelligence · Indian Markets</div>
+  </header>
+
+  <!-- HERO STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-label">Total Signals</span>
+      <span class="stat-value" id="total-signals">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Avg Accuracy</span>
+      <span class="stat-value" id="avg-accuracy">0%</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Active Researchers</span>
+      <span class="stat-value" id="active-researchers">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Market</span>
+      <span class="stat-value green">NSE · LIVE</span>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- LEFT: SUBMIT SIGNAL FORM -->
+    <section class="card form-card">
+      <h2 class="card-title">Submit a Signal</h2>
+      <p class="card-sub">Your identity stays anonymous. Only your score is public.</p>
+
+      <div class="form-group">
+        <label>Stock Symbol</label>
+        <input type="text" id="symbol" placeholder="e.g. RELIANCE, TCS, INFY" maxlength="15"/>
+      </div>
+
+      <div class="form-group">
+        <label>Signal Type</label>
+        <div class="toggle-group">
+          <button class="toggle-btn active" id="btn-buy" onclick="selectSignal('BUY')">BUY</button>
+          <button class="toggle-btn" id="btn-sell" onclick="selectSignal('SELL')">SELL</button>
+          <button class="toggle-btn" id="btn-hold" onclick="selectSignal('HOLD')">HOLD</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Confidence Level: <span id="confidence-label">50%</span></label>
+        <input type="range" id="confidence" min="10" max="100" value="50"
+          oninput="document.getElementById('confidence-label').textContent = this.value + '%'" />
+      </div>
+
+      <div class="form-group">
+        <label>Target Price (₹)</label>
+        <input type="number" id="target" placeholder="e.g. 2800" />
+      </div>
+
+      <div class="form-group">
+        <label>Time Horizon</label>
+        <select id="horizon">
+          <option value="1D">1 Day</option>
+          <option value="1W" selected>1 Week</option>
+          <option value="1M">1 Month</option>
+          <option value="3M">3 Months</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Your Reasoning (optional)</label>
+        <textarea id="reason" placeholder="Why this signal? Earnings, breakout, macro..."></textarea>
+      </div>
+
+      <button class="submit-btn" onclick="submitSignal()">Submit Signal →</button>
+      <p class="anon-note">🔒 Submitted anonymously · Scored on outcome</p>
+    </section>
+
+    <!-- RIGHT: SIGNAL FEED + LEADERBOARD -->
+    <div class="right-panel">
+
+      <!-- SIGNAL FEED -->
+      <section class="card">
+        <h2 class="card-title">Live Signal Feed</h2>
+        <p class="card-sub">Recent signals from the collective</p>
+        <div id="signal-feed" class="signal-feed">
+          <!-- Signals injected by JS -->
+        </div>
+      </section>
+
+      <!-- LEADERBOARD -->
+      <section class="card">
+        <h2 class="card-title">Researcher Leaderboard</h2>
+        <p class="card-sub">Ranked by prediction accuracy</p>
+        <div id="leaderboard" class="leaderboard">
+          <!-- Leaderboard injected by JS -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast hidden">Signal submitted successfully!</div>
+
+  <footer class="footer">
+    Built for IndiQuant · Research over speculation · Mumbai 2025
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
