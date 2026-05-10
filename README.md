@@ -2,7 +2,6 @@
 
 A frontend prototype for a **collective intelligence signal platform** built for Indian stock markets.
 
-Inspired by [IndiQuant's](https://indiquantresearch.in) vision of aggregating distributed research insight.
 
 ---
 
@@ -66,7 +65,7 @@ indiquant-signal-tracker/
 ## 👨‍💻 Author
 
 Built by [Shourya Raj] · CSE (AIML) ·  
-Research + vibe coding · Built to understand Quant's vision
+Research + vibe coding · 
 
 ---
 
